@@ -25,13 +25,20 @@ function App() {
   age: 20,
   isScholar: false,
 },
+{
+  id:4,
+  name: 'Charyl Tan',
+  course: 'BS in Commerce',
+  age: 25,
+  isScholar: true,
+},
 ]);
 
   return (
     <div className="container">
       <Header />
       <Students students={students}/>
-  
+
     </div>
   );
 }

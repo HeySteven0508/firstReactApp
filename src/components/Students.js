@@ -1,12 +1,11 @@
 import Student from './Student';
 
 const Students = ({students}) => {
-    console.log(students);
     return (
         <>
             {students.map((student) => {
                 return (
-                    <Student student={student} />
+                    <Student key={student.id} student={student} />
                 );
             })}
         </>
