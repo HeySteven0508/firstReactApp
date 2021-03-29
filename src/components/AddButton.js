@@ -2,14 +2,16 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import AddIcon from '@material-ui/icons/AddCircle'
 
-function AddButton() {
+function AddButton({title,color,showAddButton}) {
+    console.log(`${title} ${color}`)
     return (
         <Button
         variant="contained"
-        color="secondary"
+        color={color}
         startIcon={<AddIcon />}
+        onClick={showAddButton}
         >
-            Add Student
+            {title}
         </Button>
     )
 }

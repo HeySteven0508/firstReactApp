@@ -1,8 +1,10 @@
 import Header from './components/Header';
 import Students from './components/Students';
+import AddStudent from './components/AddStudent';
 import {useState} from 'react';
 
 function App() {
+  const [showAddButton,setShowAddButton] = useState(false);
   const [students,setStudents] = useState([
   {
      id:1,
@@ -41,9 +43,14 @@ const DeleteStudent = (id) => {
 
   return (
     <div className="container">
-      <Header />
-      <Students students={students} onDeleteStudent={DeleteStudent}/>
+      <Header showAddButton = {()=>setShowAddButton(!showAddButton)} showAddValue = {showAddButton}/>
 
+      {showAddButton &&
+      <AddStudent /> 
+      }
+    
+      <Students students={students} onDeleteStudent={DeleteStudent}/>
+     
     </div>
   );
 }
