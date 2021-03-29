@@ -34,10 +34,15 @@ function App() {
 },
 ]);
 
+//Delete a Student
+const DeleteStudent = (id) => {
+  setStudents(students.filter((student)=> student.id !== id));
+}
+
   return (
     <div className="container">
       <Header />
-      <Students students={students}/>
+      <Students students={students} onDeleteStudent={DeleteStudent}/>
 
     </div>
   );
