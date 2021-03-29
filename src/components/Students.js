@@ -1,3 +1,4 @@
+import Student from './Student';
 
 const Students = ({students}) => {
     console.log(students);
@@ -5,9 +6,7 @@ const Students = ({students}) => {
         <>
             {students.map((student) => {
                 return (
-                <div className="student">
-                    <h3>{student.name}</h3>
-                </div>
+                    <Student student={student} />
                 );
             })}
         </>

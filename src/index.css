@@ -26,3 +26,13 @@ body{
     padding: 30px;
     border-radius: 5px;
 }
+
+.student {
+    background: #f4f4f4;
+    margin: 5px;
+    padding: 10px 20px;
+}
+
+.student.scholar {
+    border-left: 5px solid green;
+}
