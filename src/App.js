@@ -2,13 +2,30 @@ import About from './components/About';
 import Header from './components/Header';
 import Students from './components/Students';
 import AddStudent from './components/AddStudent';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Footer from './components/Footer';
 
 function App() {
   const [showAddButton, setShowAddButton] = useState(false);
   const [students, setStudents] = useState([]);
+
+  useEffect(()=> {
+    const getStudents = async () => {
+      const studentsFromServer = await fetchStudents();
+      setStudents(studentsFromServer);  
+    }
+
+    getStudents();
+  }, [])
+
+
+  // fetching the data in the api and stored in data variables
+  const fetchStudents = async () => {
+    const res = await fetch('http://localhost:5000/students');
+    const data = await res.json();
+    return data;
+  }
 
   //Delete a Student
   const DeleteStudent = (id) => {
