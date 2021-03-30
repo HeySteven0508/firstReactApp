@@ -113,3 +113,12 @@ body{
 .scholarship {
     color: green;
 }
+
+footer{
+    margin-top: 30px;
+    text-align: center;
+}
+
+.none {
+    text-align: center;
+}
