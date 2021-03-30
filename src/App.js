@@ -37,12 +37,23 @@ function App() {
   }
 
   //Add a Student 
-  const onAddStudent = (student) => {
-    //create a random id
-    const id = Math.floor(Math.random() * 10000) + 1;
-    const newStudent = { id, ...student };
-    setStudents([...students, newStudent]);
+  const onAddStudent = async (student) => {
+    const res = await fetch('http://localhost:5000/students', {
+      method: 'POST',
+      headers: {
+        'Content-type' : 'application/json'
+      },
+      body: JSON.stringify(student),
+    });
 
+    const data = await res.json();
+    setStudents([...students,data]);
+    
+    // //create a random id
+    // const id = Math.floor(Math.random() * 10000) + 1;
+    // const newStudent = { id, ...student };
+    // setStudents([...students, newStudent]);
+    
   };
 
   return (

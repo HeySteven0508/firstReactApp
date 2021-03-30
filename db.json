@@ -15,11 +15,18 @@
       "isScholar": false
     },
     {
-      "id": 3,
-      "name": "Celestine Faith",
-      "course": "AB in Communications",
-      "age": 20,
-      "isScholar": false
+      "name": "Enteng Kabisote",
+      "course": "BS in Nursing",
+      "age": "27",
+      "isScholar": false,
+      "id": 4
+    },
+    {
+      "name": "Clarisse Dela Torre",
+      "course": "BS in Mechanical Engineering",
+      "age": "26",
+      "isScholar": true,
+      "id": 5
     }
   ]
 }
