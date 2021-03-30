@@ -2,7 +2,7 @@ import Student from './Student';
 
 
 const Students = ({students,onDeleteStudent}) => {
-    return (
+    return (    
         <>
             {students.map((student) => {
                 return (
