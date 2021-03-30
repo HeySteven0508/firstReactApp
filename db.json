@@ -20,13 +20,6 @@
       "course": "AB in Communications",
       "age": 20,
       "isScholar": false
-    },
-    {
-      "id": 4,
-      "name": "Charyl Tan",
-      "course": "BS in Commerce",
-      "age": 25,
-      "isScholar": true
     }
   ]
-} 
+}

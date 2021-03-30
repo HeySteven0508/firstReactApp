@@ -28,7 +28,11 @@ function App() {
   }
 
   //Delete a Student
-  const DeleteStudent = (id) => {
+  const DeleteStudent = async (id) => {
+    await fetch(`http://localhost:5000/students/${id}`, {
+      method: 'DELETE',
+    });
+
     setStudents(students.filter((student) => student.id !== id));
   }
 
