@@ -1,17 +1,35 @@
 import {useState} from 'react';
 
-const AddStudent = () => {
+const AddStudent = ({onAddStud}) => {
     const [name, setName] = useState('');
     const [course, setCourse] = useState('');
     const [age, setAge] = useState(0);
     const [isScholar, setIsScholar] = useState(false);
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+
+        //validation
+        if (!name){
+            alert('Please enter your name');
+            return;
+        }
+
+        onAddStud({name,course,age,isScholar});
+
+        //update the state after submitted
+        setName('');
+        setCourse('');
+        setAge('');
+        setIsScholar(false); // default value
+
+    };
     return (
         <div>
-            <form className='add-form'>
+            <form className='add-form' onSubmit={onSubmit}>
                 <div className='form-control'>
                     <label> Name </label>
-                    <input type='text' placeholder='Enter Name' 
+                     <input type='text' placeholder='Enter Name' 
                     value= {name} 
                     onChange = {(e) => setName(e.target.value)}
                     />

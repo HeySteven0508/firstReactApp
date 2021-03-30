@@ -3,13 +3,12 @@ import Button from '@material-ui/core/Button'
 import AddIcon from '@material-ui/icons/AddCircle'
 
 function AddButton({title,color,showAddButton}) {
-    console.log(`${title} ${color}`)
     return (
         <Button
         variant="contained"
         color={color}
         startIcon={<AddIcon />}
-        onClick={showAddButton}
+        onClick={showAddButton      }
         >
             {title}
         </Button>

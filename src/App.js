@@ -41,12 +41,23 @@ const DeleteStudent = (id) => {
   setStudents(students.filter((student)=> student.id !== id));
 }
 
+//Add a Student 
+const onAddStudent = (student) => {
+  //create a random id
+  const id = Math.floor(Math.random() * 10000) + 1;
+  const newStudent = {id,...student};
+  setStudents([...students,newStudent]);
+
+};
+
   return (
     <div className="container">
-      <Header showAddButton = {()=>setShowAddButton(!showAddButton)} showAddValue = {showAddButton}/>
+      <Header
+       showAddButton = {()=>setShowAddButton(!showAddButton)} 
+       showAddValue = {showAddButton}/>
 
       {showAddButton &&
-      <AddStudent /> 
+      <AddStudent onAddStud = {onAddStudent }/> 
       }
     
       <Students students={students} onDeleteStudent={DeleteStudent}/>
